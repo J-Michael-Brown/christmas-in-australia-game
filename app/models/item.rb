@@ -5,7 +5,7 @@ class Item < ActiveRecord::Base
   validates_inclusion_of :found, :in => [true, false]
 
   private
-  def method_name
-
+  def display_item_info
+    Hash.new({:name => @name, :description => @description})
   end
 end

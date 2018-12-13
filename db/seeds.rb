@@ -40,7 +40,6 @@ location_list.each do |objective_id, transition, pre_description, post_descripti
 end
 
 
-
 item_list = [
   [locations[0].id, 'item 1', "Item 1 does some stuff and things.", false],
   [locations[1].id, 'item 2', "Item 2 does some stuff and things as well.", false]
@@ -53,11 +52,6 @@ item_list.each do |location_id, name, description, found|
     :found => found
   })
 end
-
-#
-# Objective.create( :description => "The complete objective description", :complete => false )
-# Objective.create({ :description => "Another objective.", :complete => false })
-
 
 
 player_list = [

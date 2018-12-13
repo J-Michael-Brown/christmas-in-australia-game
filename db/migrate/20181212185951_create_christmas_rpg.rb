@@ -17,7 +17,6 @@ class CreateChristmasRpg < ActiveRecord::Migration[5.2]
       t.column :puzzle_solved, :boolean
     end
 
-
     create_table :items do |t|
       t.column :name, :string
       t.column :description, :string

@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/game' => 'game#index'
   get '/start' => 'game#start'
-  get '/gamestart' => 'game#index'
+  get '/gamestart' => 'game#gamestart'
 
 end

@@ -10,6 +10,7 @@ class CreateChristmasRpg < ActiveRecord::Migration[5.2]
     end
 
     create_table :locations do |t|
+      t.column :player_id, :integer
       t.column :objective_id, :integer
       t.column :transition, :text
       t.column :pre_description, :text
@@ -18,6 +19,7 @@ class CreateChristmasRpg < ActiveRecord::Migration[5.2]
     end
 
     create_table :items do |t|
+      t.column :player_id, :integer
       t.column :name, :string
       t.column :description, :string
       t.column :location_id, :integer
@@ -25,6 +27,7 @@ class CreateChristmasRpg < ActiveRecord::Migration[5.2]
     end
 
     create_table :objectives do |t|
+      t.column :player_id, :integer
       t.column :description, :text
       t.column :complete, :boolean
     end

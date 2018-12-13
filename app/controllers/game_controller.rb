@@ -14,10 +14,10 @@ class GameController < ApplicationController
   end
 
   def bed_logic
-    @time_hour = 8
-    @time_minute = 4
+    # @time_hour = 8
+    # @time_minute = 4
 
-    input = params.fetch("player_start_input").upcase
+    input = params.fetch("player_start_input").upcase.to_s
     # if input == "GO BACK TO SLEEP" || "SLEEP" || "GO TO SLEEP"
     #   @time_hour + 1
     #   @time_minute + 30
@@ -29,8 +29,8 @@ class GameController < ApplicationController
     #   end
     # end
     if input == "TEST"
-      true
-      render :gamestart
+      @test = true
     end
+    render :gamestart
   end
 end

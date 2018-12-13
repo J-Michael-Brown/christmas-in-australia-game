@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2018_12_12_185951) do
   end
 
   create_table "locations", force: :cascade do |t|
+    t.integer "objective_id"
     t.text "transition"
     t.text "pre_description"
     t.text "post_description"

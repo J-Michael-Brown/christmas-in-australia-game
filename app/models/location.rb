@@ -1,7 +1,7 @@
 class Location < ActiveRecord::Base
-  belongs_to :objectives
   validates :transition, :presence => true
   validates :pre_description, :presence => true
   validates :post_description, :presence => true
-  validates :puzzle_solved, :presence => true
+  validates :objective_id, :presence => true
+  validates_inclusion_of :puzzle_solved, :in => [true, false]
 end

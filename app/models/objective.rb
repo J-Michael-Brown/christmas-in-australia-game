@@ -1,5 +1,4 @@
 class Objective < ActiveRecord::Base
-  has_many :locations
   validates :description, :presence => true
-  validates :complete, :presence => true
+  validates_inclusion_of :complete, :in => [true, false]
 end

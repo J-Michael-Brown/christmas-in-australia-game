@@ -1,18 +1,18 @@
 <br>
-<p>You awake to the feeling of your cat jumping on your bed. It feels a little later than you usually wake up in the morning. With no alarm other than your hungry cat kneading into your head, you remember today is a holiday.</p>
+<% if @default %>
+<p> <%= "You awake to the feeling of your cat jumping on your bed. It feels a little later than you usually wake up in the morning. With no alarm other than your hungry cat kneading into your head, you remember today is a holiday." %> <p>
 
-<p>You roll over and check the time on your phone, it's 8:04AM.</p>
+<p><%= "You roll over and check the time on your phone, it's 8:04AM" %></p>
 
-<p>What do you do now?</p>
+<p><%= "What do you do now?" %></p>
 
 <ul>
-  <li>Go back to sleep</li>
-  <li>Feed cat</li>
-  <li>Check phone</li>
+<%="- Go back to sleep" %></li>
 </ul>
-
+<% elsif %>
+<%= "testing" %>
+<% end %>
 <form class="" action="/bed" method="get">
-
 <center> <input id="start-input" type="text" name="player_start_input" placeholder="" > </center>
 
 </form>

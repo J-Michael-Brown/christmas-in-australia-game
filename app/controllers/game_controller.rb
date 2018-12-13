@@ -28,10 +28,6 @@ class GameController < ApplicationController
           @time = "11:18AM"
         end
       @slept = true
-      if input == "TEST"
-        @test = true
-        @default = false
-      end
       render :gamestart
     end
   end

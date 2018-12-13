@@ -1,5 +1,6 @@
 class GameController < ApplicationController
 
+  @@counter = 0
 
   def index
     render :index
@@ -16,15 +17,14 @@ class GameController < ApplicationController
   end
 
   def bed_logic
-    @counter = 0
 
     input = params.fetch("player_start_input").upcase
     if input == "GO BACK TO SLEEP" || "SLEEP" || "GO TO SLEEP"
       @default = false
-      @counter += 1
-        if @counter = 1
+      @@counter = @@counter + 1
+        if @@counter == 1
           @time = "9:32AM"
-        elsif @counter = 2
+        elsif @@counter == 2
           @time = "11:18AM"
         end
       @slept = true

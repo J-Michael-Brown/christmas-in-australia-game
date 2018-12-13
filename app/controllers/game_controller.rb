@@ -20,14 +20,14 @@ class GameController < ApplicationController
 
     input = params.fetch("player_start_input").upcase
     if input == "GO BACK TO SLEEP" || "SLEEP" || "GO TO SLEEP"
+      @default = false
       @counter += 1
-      #   if @time_minute >= 60
-      #     @time_minute = 0
-      #   end
-      #   if @time_hour >= 12
-      #     @time_hour = 1
-      #   end
-      # end
+        if @counter = 1
+          @time = "9:32AM"
+        elsif @counter = 2
+          @time = "11:18AM"
+        end
+      @slept = true
       if input == "TEST"
         @test = true
         @default = false

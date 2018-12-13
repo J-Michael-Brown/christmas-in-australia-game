@@ -27,22 +27,21 @@ body {
   font-size: 18px;
 }
 
-#user-input {
+.user-input {
   width: 790px;
   height: 35px;
   background-color: #AAA;
   color: #EEE;
-  margin-top: 265px;
 }
 
-#start-input {
-  width: 790px;
-  height: 35px;
-  background-color: #AAA;
-  color: #EEE;
-  margin-top: 155px;
-}
+
 
 #game-frame {
   margin-top: 150px;
+}
+
+footer {
+  position: fixed;
+  bottom: 5px;
+  width: 100%;
 }

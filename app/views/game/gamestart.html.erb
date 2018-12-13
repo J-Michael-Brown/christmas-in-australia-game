@@ -9,11 +9,11 @@
 <ul>
 <%="- Go back to sleep" %></li>
 </ul>
-<% elsif %>
-<%= "testing" %>
+<% elsif  @slept%>
+<p><%= "You close your eyes and quickly drift back to sleep. You wake up to find it's currently" + " " + @time %></p>
 <% end %>
 <form class="" action="/bed" method="get">
-<center> <input id="start-input" type="text" name="player_start_input" placeholder="" > </center>
+<footer> <input class="user-input" type="text" name="player_start_input" autofocus > </footer>
 
 </form>
 

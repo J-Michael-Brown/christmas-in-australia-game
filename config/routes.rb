@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   get '/game' => 'game#index'
   get '/start' => 'game#start'
   get '/gamestart' => 'game#gamestart'
+  get '/bed' => 'game#bed_logic'
 
 end

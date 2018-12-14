@@ -10,6 +10,7 @@ class GameController < ApplicationController
     start = params.fetch("player_input").upcase
     if start == "START"
       @default = true
+      @@counter = 0
       render :gamestart
     else
       render :index

@@ -24,7 +24,8 @@ body {
 
 p {
   text-align: center;
-  padding: 13px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .game-text {
   padding-top: 25px;
@@ -35,6 +36,10 @@ p {
   height: 35px;
   background-color: #AAA;
   color: #EEE;
+}
+
+.options {
+  padding-top: 50px;
 }
 
 #game-frame {

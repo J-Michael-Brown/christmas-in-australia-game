@@ -2,14 +2,34 @@ class GameState
   attr_reader(:player, :items, :locations, :objectives)
 
   def initialize(attributes)
-    @player = attributes.fetch(:player)
-    item_ids = []
-    location_booleans(item = true/false) = []
+    @player = Player.find(attributes.fetch(:player_id))
 
-    @items = attributes.fetch(:items)
-    @locations = attributes.fetch(:locations)
-    @objectives = attributes.fetch(:objectives)
+    @items = []
+    items = Item.all
+    items.each do |item|
+      if item.player_id == @player.id
+        @items.push(item)
+      end
+    end
+
+
+    @locations = []
+    locations = Location.all
+    locations.each do |location|
+      if location.player_id == @player.id
+        @locations.push(location)
+      end
+    end
+
+    @objectives = []
+    objectives = Objective.all
+    objectives.each do |objective|
+      if objective.player_id == @player.id
+        @objectives.push(objective)
+      end
+    end
   end
+
 
   def find_location(location_id)
     @locations.each do |location|
@@ -25,7 +45,8 @@ class GameState
       if item.found
         held.push(item)
       end
-    held
+      held
+    end
   end
 
   def player_location(location_id = @player.location_id)
@@ -46,5 +67,5 @@ class GameState
     end
   end
 
-  
+
 end

@@ -15,7 +15,19 @@
 
 <% elsif  @slept%>
 
-<p> You close your eyes and quickly drift back to sleep. You wake up to find it's currently <%= @time %></p>
+<p><%= "You close your eyes and quickly drift back to sleep. You wake up to find it's currently" %> <%= @time %></p>
+<h4><%= "What do you do now?" %></h4>
+
+<span><%="Go back to sleep" %></span><br>
+<span><%="Get up and feed cat" %></span><br>
+<span><%="Check phone" %></span>
+
+<% elsif  @tired%>
+<%= "Are you feeling okay?" %>
+<h4><%= "What do you do now?" %></h4>
+
+<span><%="Get up and feed cat" %></span><br>
+<span><%="Check phone" %></span>
 <% end %>
 <form class="" action="/bed" method="get">
 <footer> <input class="user-input" type="text" name="player_start_input" autofocus > </footer>

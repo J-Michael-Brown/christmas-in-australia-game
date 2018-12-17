@@ -9,8 +9,16 @@ class GameController < ApplicationController
   def start
     start = params.fetch("player_input").upcase
     if start == "START"
+      @location = Location.new({:transition => 'Welcome!', :pre_description => 'for now, I look like this', :post_description => 'after that thing, I look like this now.', :puzzle_solved => false, :id => 1, :objective_id => 1, :player_id => 1})
+      @location.save
+      @objective = Objective.new({:player_id => 1, :description => 'find compass', :complete => false})
+      @objective.save
+      location_id = @location.id
+      @player = Player.new({:name => 'Tester', :location_id => location_id, :objective_id => nil, :id => 1})
+      @player.save()
       @default = true
       @@counter = 0
+      binding.pry
       render :gamestart
     else
       render :index

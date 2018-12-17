@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2018_12_12_185951) do
   enable_extension "plpgsql"
 
   create_table "items", force: :cascade do |t|
+    t.integer "player_id"
     t.string "name"
     t.string "description"
     t.integer "location_id"
@@ -23,6 +24,7 @@ ActiveRecord::Schema.define(version: 2018_12_12_185951) do
   end
 
   create_table "locations", force: :cascade do |t|
+    t.integer "player_id"
     t.integer "objective_id"
     t.text "transition"
     t.text "pre_description"
@@ -31,6 +33,7 @@ ActiveRecord::Schema.define(version: 2018_12_12_185951) do
   end
 
   create_table "objectives", force: :cascade do |t|
+    t.integer "player_id"
     t.text "description"
     t.boolean "complete"
   end

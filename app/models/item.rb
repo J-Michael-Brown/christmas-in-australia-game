@@ -1,11 +1,16 @@
 class Item < ActiveRecord::Base
-  validates :location_id, :presence => true
+  belongs_to :location
+
+  validates :player_id, :presence => true
   validates :name, :presence => true
   validates :description, :presence => true
   validates_inclusion_of :found, :in => [true, false]
 
-  private
-  def method_name
-
+  def held_by
+    if @found
+      'player'
+    else
+      Location.find(@location_id)
+    end
   end
 end

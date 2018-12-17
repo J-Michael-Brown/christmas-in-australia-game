@@ -42,12 +42,24 @@ describe '#player_items' do
       :player => player,
       :locations => [location, location2],
       :items => [item, item2],
-      :objectives => []
     })
-
-
     expect(game.player_items).to(eq([item2]))
-
-
   end
+end
+
+describe '#move_to(location)' do
+  it 'return player\'s location' do
+
+  location_one = Location.new({
+    :transition => 'Goodbye',
+    :pre_description => 'You\'re now walking away',
+    :post_description => 'Goodluck in your adventure',
+    :puzzle_solved => false
+  })
+  game = GameState.new({:player => Player.create({:name => 'chester',:location_id => 1,:objective_id => 0})})
+  game.objectives[0].locations.push(location_one)
+
+  expect(game.move_to(location_one.id)).to(eq(location_one.id))
+
+end
 end

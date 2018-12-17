@@ -18,10 +18,8 @@ class GameController < ApplicationController
   end
 
   def bed_logic
-
     input = params.fetch("player_start_input").upcase
-
-    if input == ("GO BACK TO SLEEP" || "SLEEP" || "GO TO SLEEP")
+    if input == (("SLEEP") || ("GO BACK TO SLEEP") || ("GO TO SLEEP"))
       @default = false
       @@counter = @@counter + 1
       if @@counter == 1
@@ -39,13 +37,14 @@ class GameController < ApplicationController
       elsif @@counter == 5
         @slept = true
         @time = "3:59PM"
-      elsif @@counter == 5
+      elsif @@counter == 6
         @slept = false
       end
       @tired = true
       render :gamestart
-    elsif input == ("FEED" || "FEED CAT" || "GET UP AND FEED CAT")
+    elsif input == (("FEED") || ("FEED CAT") || ("GET UP AND FEED CAT"))
       @default = false
+      @slept = false
       if @@counter >= 1
         @hungry = true
       else

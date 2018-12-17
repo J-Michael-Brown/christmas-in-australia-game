@@ -3,7 +3,6 @@ class Location < ActiveRecord::Base
   has_one :item
   belongs_to :player
 
-  validates :player_id, :presence => true
   validates :transition, :presence => true
   validates :pre_description, :presence => true
   validates :post_description, :presence => true

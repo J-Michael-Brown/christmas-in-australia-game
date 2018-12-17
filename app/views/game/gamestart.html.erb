@@ -22,13 +22,31 @@
 <span><%="Get up and feed cat" %></span><br>
 <span><%="Check phone" %></span>
 
-
-
 <% elsif  @tired%>
 <%= "Are you feeling okay?" %>
 <h4><%= "What do you do now?" %></h4>
 
 <span><%="Get up and feed cat" %></span><br>
+<span><%="Check phone" %></span>
+
+<% elsif  @hungry%>
+<p><%= "You roll out of bed and muddle your way into the kitchen, cat screaming while dodging between your steps" %></p>
+
+<p><%= "Checking the bag of food you find a chewed out hole with bits of food scattered across the table...your cat still appears hungry although you might have a feeling they are probably okay." %></p>
+<h4><%= "What do you do now?" %></h4>
+
+<span><%="Pet cat" %></span><br>
+<span><%="Check phone" %></span>
+
+<% elsif  @feeds%>
+<p><%= "You roll out of bed and muddle your way into the kitchen, cat screaming while dodging between your steps" %></p>
+
+<p><%= "Grabbing the bag of food you remembered that you accidentally bought kitten food, your cat doesn't seem to mind either way so you've been going through it anyway." %></p>
+
+<p><%= "Pouring the food into your cats dish as they try to push your hand away to start eating as soon as possible." %></p>
+<h4><%= "What do you do now?" %></h4>
+
+<span><%="Pet cat" %></span><br>
 <span><%="Check phone" %></span>
 <% end %>
 <form class="" action="/bed" method="get">

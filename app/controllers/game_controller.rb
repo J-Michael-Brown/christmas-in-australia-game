@@ -28,6 +28,7 @@ class GameController < ApplicationController
 
   def bed_logic
     input = params.fetch("player_start_input").upcase
+
     if input == (("SLEEP") || ("GO BACK TO SLEEP") || ("GO TO SLEEP"))
       @default = false
       @@counter = @@counter + 1
@@ -60,14 +61,14 @@ class GameController < ApplicationController
         @feeds = true
       end
       render :gamestart
-    elsif input == (("PET") || ("PET CAT"))
+    elsif input == (("PET") || ("PET CAT") || ("PET MY CAT"))
       @default = false
       @slept = false
       @hungry = false
       @feeds = false
       @pets = true
       render :gamestart
-    elsif input == (("CHECK PHONE") || ("PHONE"))
+    elsif input == (("PHONE") || ("CHECK PHONE") || ("CHECK THE PHONE"))
       @default = false
       @slept = false
       @hungry = false
@@ -78,10 +79,11 @@ class GameController < ApplicationController
       @player = @player
       @location = @location
       render :area1
+    else
+      @default = true
+      render :gamestart
     end
   end
-
-
 
   def start_area_1
     @header = "Before you step out of your cozy home, you notice your late grandmother's favorite compass, You inspect the compass. It shows 3 north's and an east. You can't help but wonder if this is the reason grandma was constantly taking left turns. What do you do?"

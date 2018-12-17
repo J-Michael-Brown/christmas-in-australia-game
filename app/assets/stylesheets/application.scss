@@ -93,7 +93,7 @@ body{
     left:0;
     bottom:0;
     right:0;
-    background:transparentize($screen-background,.9);
+    background:transparentize($screen-background,.98);
     opacity:0;
     z-index:2;
     pointer-events:none;

@@ -24,20 +24,24 @@ class GameController < ApplicationController
       @default = false
       @@counter = @@counter + 1
         if @@counter == 1
+          @slept = true
           @time = "9:32AM"
         elsif @@counter == 2
+          @slept = true
           @time = "11:18AM"
         elsif @@counter == 3
+          @slept = true
           @time = "12:45PM"
         elsif @@counter == 4
+          @slept = true
           @time = "1:37PM"
         elsif @@counter == 5
+          @slept = true
           @time = "3:59PM"
         elsif @@counter == 5
-          @tired = true
           @slept = false
         end
-      @slept = true
+        @tired = true
       render :gamestart
     end
   end

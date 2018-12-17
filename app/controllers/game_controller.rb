@@ -41,4 +41,19 @@ class GameController < ApplicationController
       render :gamestart
     end
   end
+
+  def start_area_1
+    render :area1
+  end
+
+  def area1_game
+    input = params.fetch("player_area1_input").upcase
+    if input == ("TAKE IT" || "TAKE")
+    @item1 = "You take Grandma's watch"
+    render :area1
+    else
+      @item1 = "Try again"
+      render :area1
+    end
+  end
 end

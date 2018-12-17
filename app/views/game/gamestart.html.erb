@@ -1,4 +1,5 @@
 <br>
+<% @location %> <% @player %> <% @objective %>
 <% if @default %>
 <p> <%= "You awake to the feeling of your cat jumping on your bed. It feels a little later than you usually wake up in the morning. With no alarm other than your hungry cat kneading into your head, you remember today is a holiday." %> <p>
 
@@ -47,6 +48,13 @@
 <h4><%= "What do you do now?" %></h4>
 
 <span><%="Pet cat" %></span><br>
+<span><%="Check phone" %></span>
+
+<% elsif  @pets%>
+<p><%= "They like you" %></p>
+
+<h4><%= "What do you do now?" %></h4>
+
 <span><%="Check phone" %></span>
 <% end %>
 <form class="" action="/bed" method="get">

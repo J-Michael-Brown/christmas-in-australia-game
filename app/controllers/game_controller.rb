@@ -18,7 +18,6 @@ class GameController < ApplicationController
       @player.save()
       @default = true
       @@counter = 0
-      binding.pry
       render :gamestart
     else
       render :index
@@ -58,6 +57,13 @@ class GameController < ApplicationController
       else
         @feeds = true
       end
+      render :gamestart
+    elsif input == (("PET") || ("PET CAT"))
+      @default = false
+      @slept = false
+      @hungry = false
+      @feeds = false
+      @pets = true
       render :gamestart
     end
   end

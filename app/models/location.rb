@@ -1,6 +1,7 @@
 class Location < ActiveRecord::Base
   belongs_to :objective
   has_one :item
+  belongs_to :player
 
   validates :player_id, :presence => true
   validates :transition, :presence => true

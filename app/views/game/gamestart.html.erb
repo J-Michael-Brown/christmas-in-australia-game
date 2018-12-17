@@ -56,6 +56,15 @@
 <h4><%= "What do you do now?" %></h4>
 
 <span><%="Check phone" %></span>
+
+<% elsif  @phone%>
+<p><%= "You feel a buzz and check your phone. An unknown number sent you a text that reads 'Find Santa.'" %></p>
+
+<p><%= "With abosultely no clue what's going on, you decide to follow along for the sake of plot." %></p>
+
+<h4><%= "What do you do now?" %></h4>
+
+<span><%="Find Santa" %></span>
 <% end %>
 <form class="" action="/bed" method="get">
 <footer> <input class="user-input" type="text" name="player_start_input" autofocus > </footer>

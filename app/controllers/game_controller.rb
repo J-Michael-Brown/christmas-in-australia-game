@@ -65,6 +65,17 @@ class GameController < ApplicationController
       @feeds = false
       @pets = true
       render :gamestart
+    elsif input == (("CHECK PHONE") || ("PHONE"))
+      @default = false
+      @slept = false
+      @hungry = false
+      @feeds = false
+      @pets = false
+      @phone = true
+      @objective = @objective
+      @player = @player
+      @location = @location
+      render :area1
     end
   end
 end

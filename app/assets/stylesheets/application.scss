@@ -22,14 +22,32 @@ body {
   text-align: center;
 }
 
+p {
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 .game-text {
   padding-top: 25px;
-  font-size: 18px;
 }
 
-#user-input {
+.user-input {
   width: 790px;
   height: 35px;
-  background-color: #7F7F7F;
+  background-color: #AAA;
   color: #EEE;
+}
+
+.options {
+  padding-top: 50px;
+}
+
+#game-frame {
+  margin-top: 150px;
+}
+
+footer {
+  position: fixed;
+  bottom: 5px;
+  width: 100%;
 }

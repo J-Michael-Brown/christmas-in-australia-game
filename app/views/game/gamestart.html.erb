@@ -1,0 +1,39 @@
+<br>
+<% if @default %>
+<p> <%= "You awake to the feeling of your cat jumping on your bed. It feels a little later than you usually wake up in the morning. With no alarm other than your hungry cat kneading into your head, you remember today is a holiday." %> <p>
+
+<p><%= "You roll over and check the time on your phone, it's 8:04AM" %></p>
+
+<div class="options">
+<h4><%= "What do you do now?" %></h4>
+
+<span><%="Go back to sleep" %></span><br>
+<span><%="Get up and feed cat" %></span><br>
+<span><%="Check phone" %></span>
+
+</div>
+
+<% elsif  @slept%>
+
+<p><%= "You close your eyes and quickly drift back to sleep. You wake up to find it's currently" %> <%= @time %></p>
+<h4><%= "What do you do now?" %></h4>
+
+<span><%="Go back to sleep" %></span><br>
+<span><%="Get up and feed cat" %></span><br>
+<span><%="Check phone" %></span>
+
+<% elsif  @tired%>
+<%= "Are you feeling okay?" %>
+<h4><%= "What do you do now?" %></h4>
+
+<span><%="Get up and feed cat" %></span><br>
+<span><%="Check phone" %></span>
+<% end %>
+<form class="" action="/bed" method="get">
+<footer> <input class="user-input" type="text" name="player_start_input" autofocus > </footer>
+
+</form>
+
+<% if @test %>
+<%= "This works" %>
+<% end %>

@@ -90,6 +90,7 @@ body{
   background-repeat: no-repeat;
   height: 800px;
   background-position: center;
+  background-size: contain;
 
   // flicker
   &::after{
@@ -185,11 +186,11 @@ body{
   height:100%;
   border:none;
 }
-#switch~.container>.screen{
+#switch~.container>#game_name{
   animation: turn-off 0.55s $ease-out-quint;
   animation-fill-mode:forwards;
 }
-#switch:checked~.container>.screen{
+#switch:checked~.container>#game_name{
   animation: turn-on 4s linear;
   animation-fill-mode:forwards;
 }
@@ -228,7 +229,7 @@ body{
 }
 
 input {
-  width: 425px;
+  width: 475px;
   margin-left: -41px;
   background-color: $screen-background;
   color: #EEE;
@@ -242,8 +243,8 @@ input {
 }
 
 #game-frame {
-  margin-top: 190px;
-  margin-right: 155px;
+  margin-top: 120px;
+  margin-right: 215px;
   border: none;
   border-radius: 10px;
   border-radius: 2em / 5em;
@@ -262,15 +263,17 @@ p {
 }
 
 #switch:checked~#game_name{
-  font-size: 40px;
-  margin-top: 100px;
+  font-size: 55px;
+  margin-top: 50px;
+  padding-bottom: 50px;
   animation-duration: 3s;
   animation-delay: 2s;
   animation-iteration-count: infinite;
 }
 #switch~#game_name{
-  font-size: 40px;
-  margin-top: 100px;
+  font-size: 55px;
+  margin-top: 50px;
+  padding-bottom: 50px;
 }
 
 img {

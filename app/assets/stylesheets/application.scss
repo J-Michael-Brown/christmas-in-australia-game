@@ -186,11 +186,11 @@ body{
   height:100%;
   border:none;
 }
-#switch~.container>#game_name{
+#switch~.container{
   animation: turn-off 0.55s $ease-out-quint;
   animation-fill-mode:forwards;
 }
-#switch:checked~.container>#game_name{
+#switch:checked~.container{
   animation: turn-on 4s linear;
   animation-fill-mode:forwards;
 }

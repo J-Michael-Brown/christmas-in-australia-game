@@ -1,0 +1,7 @@
+<div class="location-list">
+  <dl>
+    <% @locations.each do |location| %>
+      <dt><%= link_to location.sign, location_path(location) %></dt>
+    <% end %>
+  </dl>
+</div>

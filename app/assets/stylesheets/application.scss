@@ -89,6 +89,7 @@ body{
   background-image: url(https://toppng.com/public/uploads/preview/old-tv-11527929327amrqtw5udw.png);
   background-repeat: no-repeat;
   height: 800px;
+  background-position: center;
 
   // flicker
   &::after{
@@ -241,8 +242,8 @@ input {
 }
 
 #game-frame {
-  margin-top: 80px;
-  margin-right: 490px;
+  margin-top: 190px;
+  margin-right: 150px;
   border: none;
   border-radius: 10px;
   border-radius: 2em / 5em;

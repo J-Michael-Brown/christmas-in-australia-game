@@ -37,6 +37,19 @@ body{
   font-size: 13px;
 }
 
+button {
+  display:inline-block;
+  cursor:pointer;
+  background:#22252b;
+  color:white;
+  padding:10px;
+  padding-left:15px;
+  padding-right:15px;
+  border-radius:5px;
+  margin-top:10px;
+  border: none;
+}
+
 #switch{
   display:none;
 }
@@ -224,42 +237,12 @@ body{
   animation-fill-mode:forwards;
 }
 
-.game-text {
-  padding-top: 25px;
-}
-
-input {
-  width: 475px;
-  margin-left: -41px;
-  background-color: $screen-background;
-  color: #EEE;
-  text-align: center;
-  border-color: $screen-background;
-}
-
-.options {
-  padding-top: 50px;
-  margin-bottom: 50px;
-}
-
 #game-frame {
   margin-top: 120px;
   margin-right: 215px;
   border: none;
   border-radius: 10px;
   border-radius: 2em / 5em;
-}
-
-footer {
-  position: fixed;
-  bottom: 1px;
-  width: 100%;
-}
-
-p {
-  text-align: center;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 #switch:checked~#game_name{
@@ -276,20 +259,35 @@ p {
   padding-bottom: 50px;
 }
 
+input {
+  width: 475px;
+  margin-left: -41px;
+  background-color: $screen-background;
+  color: #EEE;
+  text-align: center;
+  border-color: $screen-background;
+}
+
+.options {
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+
+p {
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 img {
   width: 25%;
   border-radius: 50%;
 }
 
-button {
-  display:inline-block;
-  cursor:pointer;
-  background:#22252b;
-  color:white;
-  padding:10px;
-  padding-left:15px;
-  padding-right:15px;
-  border-radius:5px;
-  margin-top:10px;
-  border: none;
+footer {
+  position: fixed;
+  bottom: 1px;
+  width: 100%;
 }

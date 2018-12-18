@@ -1,0 +1,9 @@
+<p><%=  @objective.description %></p>
+
+<dl>
+  <% @objective.locations.each do |location| %>
+    <%# if location > 0 %>
+    <dd><%= link_to location.sign, objective_location_path(location) %></dd>
+    <%# end %>
+  <% end %>
+</dl>

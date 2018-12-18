@@ -3,5 +3,5 @@ class Option < ActiveRecord::Base
   # belongs_to :player
 
   validates :action, :presence => true
-  validates :value, :presence => true
+  # validates :value, :presence => true
 end

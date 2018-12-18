@@ -1,8 +1,9 @@
 class GameState
   attr_accessor :player, :locations, :items, :objectives
 
-  def initialize(attributes)
-    @player = attributes.fetch(:player, player = Player.create({:name => 'chester',:location_id => 1,:objective_id => 0}))
+  def initialize(player)
+    @player = player
+    player? = attributes.fetch(:player, player = Player.create({:name => 'chester',:location_id => 1,:objective_id => 0}))
 
     @objectives = attributes.fetch(:objectives, [@player.objectives.create({:description => 'new objective', :complete => false})])
 

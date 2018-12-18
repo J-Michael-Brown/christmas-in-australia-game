@@ -98,7 +98,7 @@ class GameController < ApplicationController
     if input == (("TAKE IT") || ("TAKE"))
     @header = "You happily took Grandma's compass!"
     @story = "You say bye to your cat as you head out on your journey. You close your door behind you as you step into the brisk warm air of the australlian outback. The post apocolyptic wasteland you call home  is preparing for the upcoming holiday season. You look around and see your nieghbor Miles the Capybara setting up Christmas decorations in his capybarian home."
-    @image = "/capybara.png"
+    @image = "/cool_capy.png"
     @dialogue = "Hey *&$@!, glad to see you've finally left the house. We need your help. a band of misfits have taken over the old quarry."
     @choice = "Do you help?"
     @option1 = "1) Pretend you don't notice him and continue walking"

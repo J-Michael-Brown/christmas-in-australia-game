@@ -78,73 +78,111 @@ class GameController < ApplicationController
       @objective = @objective
       @player = @player
       @location = @location
-      render :area1
+      @header = "Before you step out of your cozy home, you notice your late grandmother's favorite compass, You inspect the compass. It shows 3 north's and an east. You can't help but wonder if this is the reason grandma was constantly taking left turns. What do you do?"
+      @choice = "Do you take the compass?"
+      @option1 = "Take it"
+      @option2 = "Leave it"
+      render :scene1
     else
       @default = true
       render :gamestart
     end
   end
 
-  def start_area_1
-    @header = "Before you step out of your cozy home, you notice your late grandmother's favorite compass, You inspect the compass. It shows 3 north's and an east. You can't help but wonder if this is the reason grandma was constantly taking left turns. What do you do?"
+  def start_scene_1
+    @header = "Before you step out of your cozy home, you notice your late grandmother's favorite compass, You inspect the compass. It shows three north's and an east. You can't help but wonder if this is the reason grandma was constantly taking left turns."
     @choice = "Do you take the compass?"
     @option1 = "Take it"
     @option2 = "Leave it"
-    render :area1
+    render :scene1
   end
 
-  def area1_game
-    input = params.fetch("player_area1_input").upcase
+  def scene1_game
+    input = params.fetch("player_scene1_input").upcase
     if input == (("TAKE IT") || ("TAKE"))
+
     @header = "You happily took Grandma's compass!"
     @story = "You say bye to your cat as you head out on your journey. You close your door behind you as you step into the brisk warm air of the australlian outback. The post apocolyptic wasteland you call home  is preparing for the upcoming holiday season. You look around and see your nieghbor Miles the Capybara setting up Christmas decorations in his capybarian home."
     @image = "/cool_capy.png"
     @dialogue = "Hey *&$@!, glad to see you've finally left the house. We need your help. a band of misfits have taken over the old quarry."
+    @header = "You took Grandma's compass!"
+    @story = "You say bye to your cat as you head out on your journey. You close your door behind you as you step into the brisk warm air of the australlian outback. The post apocolyptic wasteland you call home is preparing for the upcoming holiday season. You look around and see your nieghbor Miles the Capybara setting up Christmas decorations in his capybarian home."
+    @image = "/capybara.png"
+    @dialogue = "Hey @Player, glad to see you've finally left the house. We need your help. a band of misfits have taken over the old quarry."
     @choice = "Do you help?"
-    @option1 = "1) Pretend you don't notice him and continue walking"
-    @option2 = "2) Nod in agreement and head to the old quarry"
+    @option1 = "(walk) | Pretend you don't notice him and continue walking, you assume he's asking for spare change"
+    @option2 = "(talk) | Nod heroically in agreement and head to the old quarry"
     # Update compass item to database here
-    render :area1
+    render :scene1
   elsif
     input == (("TALK")|| ("ACCEPT"))
-    @header = "After accepting the role of hero for our story you skip lacksidically through the great outback to the old quary. You approach the band of misfits only to find out that they're in fact christmas elves."
-    @choice = "What do you do next??"
-    @option1 = "plot sneak attack"
-    @option2 = "full frontal assault"
-    render :area2
+    @header = "After accepting the role of hero for our story you skip lacksidically through the great outback to the old quary. You approach the band of misfits only to find out that they're in fact... christmas elves. One noticeable large elf notices you and approaches."
+    @choice = "What do you do next?"
+    @option1 = "speak"
+    @option2 = "ignore"
+    render :scene2
   elsif
     input == (("WALK")|| ("INGORE"))
-    @header = "After ignoring the old rodents command youYou head down to the path and approach the old Quarry. What you see blows your mind. It's a pack of christmas elves in the middle of the australian outback. One elf notices you and approaches."
+    @header = "After ignoring the old rodents concerns. You make your way through the desert path and approach the old Quarry. What you see shocks you It's a pack of christmas elves in the middle of the australian outback. One noticeable large elf notices you and approaches."
     @choice = "Do you speak to it or run away??"
     @option1 = "speak"
-    @option2 = "run"
-    render :area2
+    @option2 = "ignore"
+    render :scene2
   else
       @story = "You can't leave grandma's compass. How will you find your way without her guiding spirit and useless compass?"
       @choice = "Do you take the compass?"
       @option1 = "Take it"
       @option2 = "Take it"
-      render :area1
+      render :scene1
     end
   end
 
 
-  def start_area_2
-    @header = "swooty"
-    @choice =
+  def start_scene_2
+    @header =
+    @choice = "no cheating now"
     @option1 =
     @option2 =
-    render :area1
+    render :scene1
   end
 
-  def area2_game
-    input = params.fetch("player_area2_input").upcase
-    if input == (("accept") || ("nah"))
-    @header = "You head down to the path and approach the old Quarry. What you see blows your mind. It's a pack of christmas elves in the middle of the australian outback. One elf notices you and approaches."
-    @choice = "Do you speak to it or run away??"
-    @option1 = "speak"
-    @option2 = "run"
-    render :area2
+  def scene2_game
+    input = params.fetch("player_scene2_input").upcase
+    if input == ("SPEAK")
+      @header = "The elf approaches you with extreme levels of christmas cheer. You reluctantly speak to the elf: 'HEY FRIEND! I have a riddle for you?"
+      @choice = "Do you accept his holiday challenge?"
+      @image = "/elf.png"
+      @option1 = "(Y) | you help the elf"
+      @option2 = "(N) | bad vides.. you walk away"
+      render :scene2
+    elsif input == ("Y")
+      @header = "You accept the jolly elf's challenge. "
+      @story = "He prances and dances and then turns to you with a grin, and asks the first riddle:"
+      @choice = "I describe a toilet cleaner as well as one of Santa's reindeer. What am I?"
+      @option1 = ""
+      @option2 = ""
+      render :scene3
+    else
+      @header = "You conclude that this situation is too wierd for you. You stick to your guts and pretend not to have noticed the overly jolly man elf and speed off down the path. You wonder if you should have just stayed in bed today."
+      @choice = "You continue on with your plain adventure. you find a fork in the road:"
+      @option1 = "Go left"
+      @option2 = "Go right"
+      @option3 = "(Use) | grandma's compass"
+      render :scene3
+    end
+  end
+
+  def scene3_game
+    input = params.fetch("player_scene3_input").upcase
+    if input == ("USE")
+      @story= "You open grandma's old compass. It does nothing"
+      @choice = "You still find yourself at a fork in the road:"
+      @option1 = "Go left"
+      @option2 = "or"
+      @option3 = "Go right"
+    render :scene3
+    # elsif
+    # else
     end
   end
 end

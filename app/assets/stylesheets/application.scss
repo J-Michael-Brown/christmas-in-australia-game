@@ -25,8 +25,7 @@
 
 $ease-out-quint:cubic-bezier(0.230, 1.000, 0.320, 1.000);
 $ease-in-quint:cubic-bezier(0.755, 0.050, 0.855, 0.060);
-$screen-background:transparent;
-
+$screen-background:#121010;
 
 body{
   font-family: 'px437_ami_biosregular';
@@ -36,7 +35,6 @@ body{
   padding-left:20px;
   text-align: center;
   font-size: 13px;
-
 }
 
 #switch{
@@ -45,8 +43,8 @@ body{
 .switch-label{
   display:inline-block;
   cursor:pointer;
-  background:#fff;
-  color:#111;
+  background:#22252b;
+  color:white;
   padding:10px;
   padding-left:15px;
   padding-right:15px;
@@ -88,7 +86,9 @@ body{
   }
 }
 .container{
-  background-image: url(https://images.unsplash.com/photo-1467293622093-9f15c96be70f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80);
+  background-image: url(https://toppng.com/public/uploads/preview/old-tv-11527929327amrqtw5udw.png);
+  background-repeat: no-repeat;
+  height: 800px;
 
   // flicker
   &::after{
@@ -227,11 +227,12 @@ body{
 }
 
 input {
-  width: 98%;
+  width: 425px;
   margin-left: -41px;
-  background-color: #AAA;
+  background-color: $screen-background;
   color: #EEE;
   text-align: center;
+  border-color: $screen-background;
 }
 
 .options {
@@ -240,12 +241,16 @@ input {
 }
 
 #game-frame {
-  margin-top: 125px;
+  margin-top: 80px;
+  margin-right: 490px;
+  border: none;
+  border-radius: 10px;
+  border-radius: 2em / 5em;
 }
 
 footer {
   position: fixed;
-  bottom: 3px;
+  bottom: 1px;
   width: 100%;
 }
 
@@ -270,4 +275,17 @@ p {
 img {
   width: 25%;
   border-radius: 50%;
+}
+
+button {
+  display:inline-block;
+  cursor:pointer;
+  background:#22252b;
+  color:white;
+  padding:10px;
+  padding-left:15px;
+  padding-right:15px;
+  border-radius:5px;
+  margin-top:10px;
+  border: none;
 }

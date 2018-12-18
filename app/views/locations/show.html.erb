@@ -1,0 +1,13 @@
+<h3><%= @location.sign %></h3>
+
+<p><%=  @location.transition %></p>
+
+<p><%=  @location.pre_description %></p>
+
+<dl>
+  <% @location.options.each do |option| %>
+    <%# if option > 0 %>
+    <dd><%= option.action %></dd>
+    <%# end %>
+  <% end %>
+</dl>

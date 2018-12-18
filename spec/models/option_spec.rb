@@ -1,5 +1,6 @@
 require 'rails_helper'
 
-describe Item do
+describe Option do
   it { should belong_to :location }
+
 end

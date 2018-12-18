@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :objectives
     resources :locations
     resources :items
+    resources :options
   end
 
   resources :objectives do
@@ -12,7 +13,16 @@ Rails.application.routes.draw do
 
   resources :locations do
     resources :items
+    resources :options
   end
+
+
+  resources :options do
+    resources :locations
+  end
+
+
+
 
   root 'home#index'
   get '/game' => 'game#index'

@@ -1,6 +1,6 @@
 class Item < ActiveRecord::Base
   belongs_to :location
-  belongs_to :player
+  # belongs_to :player
 
   validates :name, :presence => true
   validates :description, :presence => true

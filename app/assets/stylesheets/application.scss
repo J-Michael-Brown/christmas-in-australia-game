@@ -244,8 +244,30 @@ footer {
   width: 100%;
 }
 
+.options {
+  margin-bottom: 200px;
+}
+
 p {
   text-align: center;
   padding-left: 15px;
   padding-right: 15px;
 }
+
+input {
+  caret-color: blue;
+}
+
+// .story-image {
+//   width: 300px;
+//   height: 300px;
+//   border: none;
+// }
+
+// .user-input {
+//       font-size: 12px;
+//       background-color: red;
+//       color: red;
+//       position: relative;
+//       opacity: 0.9;
+// }

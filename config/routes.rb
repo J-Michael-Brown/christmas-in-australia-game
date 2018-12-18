@@ -13,15 +13,17 @@ Rails.application.routes.draw do
   resources :locations do
     resources :items
   end
-  
+
   root 'home#index'
   get '/game' => 'game#index'
   get '/start' => 'game#start'
   get '/gamestart' => 'game#gamestart'
   get '/bed' => 'game#bed_logic'
-  get '/area1' => 'game#start_area_1'
-  get '/area1_game' => 'game#area1_game'
-  get '/area2' => 'game#start_area_2'
-  get '/area2_game' => 'game#area2_game'
+  get '/scene1' => 'game#start_scene_1'
+  get '/scene1_game' => 'game#scene1_game'
+  get '/scene2' => 'game#start_scene_2'
+  get '/scene2_game' => 'game#scene2_game'
+  get '/scene3' => 'game#start_scene_3'
+  get '/scene3_game' => 'game#scene3_game'
 
 end

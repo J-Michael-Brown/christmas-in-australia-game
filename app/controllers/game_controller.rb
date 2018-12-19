@@ -215,12 +215,27 @@ class GameController < ApplicationController
       @option2 = "Stay"
       render :scene3
     else input == ("STAY")
-      @header = "You continue down your path"
-      @story= "As you continue your journey you"
-      @dialogue = "As you walk down the path. You notice a old fat man and a reigndeer wondering about"
+      @header = "You continue down your chosen path"
+      @story= "As you approach steady pace, "
+      @dialogue =
       @choice = "What do you do?"
-      @option1 = "go left"
-      @option2 = "Stay"
+      @option1 = "Speak"
+      @option2 = "Walk"
+      render :scene4
+    end
+  end
+
+  def scene4_game
+    input = params.fetch("player_scene4_input").upcase
+    if input == ("SPEAK")
+      @header= "YOU HAVE COMPLETED CHAPTER 1"
+      @story= "To unlock more of this epic, purchase more lootboxes."
+      @image = ("/CHEAP.gif")
+      @dialogue=
+      @choice = "Purchase lootbox?"
+      @option1 = "1 for $.99"
+      @option2 = "5 for $3.99"
+      @option3 = "100 for $49.99"
       render :scene4
     end
   end

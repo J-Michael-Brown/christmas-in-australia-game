@@ -115,13 +115,16 @@ button {
     z-index:2;
     pointer-events:none;
     margin-top: 115px;
+    border: none;
+    border-radius: 10px;
+    border-radius: 2em / 5em;
   }
 
   &::before {
     content:" ";
     display:block;
     position:absolute;
-    height: 525px;
+    height: 500px;
     width: 735px;
     background:linear-gradient(transparentize($screen-background,1) 50%, transparentize(darken($screen-background,10),0.75) 50%), linear-gradient(90deg,transparentize(#ff0000,0.94),transparentize(#00ff00,0.98),transparentize(#0000ff,0.94));
     z-index:2;
@@ -190,11 +193,7 @@ button {
     filter:brightness(50);
   }
 }
-.screen {
-  width:100%;
-  height:100%;
-  border:none;
-}
+
 #switch~.background>.container {
   animation: turn-off 0.55s $ease-out-quint;
   animation-fill-mode:forwards;
@@ -236,7 +235,7 @@ button {
 #game-frame {
   border: none;
   border-radius: 10px;
-  border-radius: 2em / 5em;
+  border-radius: 2em 2em / 5em 5em;
   margin-top: 123px;
 }
 

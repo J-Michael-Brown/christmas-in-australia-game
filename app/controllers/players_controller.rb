@@ -1,45 +1,21 @@
-require "pry"
-
-class GameController < ApplicationController
-
-
-
-
-
-  def start
-    start = params.fetch("player_input").upcase
-    if start == "START"
-      @player = Player.new({:name => 'Tester', :location_id => 0, :objective_id => 0})
-      @player.save
-
-      @objective = @player.objectives.create({:description => 'find compass', :complete => false})
-
-      @player.objective_id = @objective.id
-
-      @location = @objective.locations.create({:sign => 'Bed', :transition => "You awake to the feeling of your cat jumping on your bed. It feels a little later than you usually wake up in the morning. With no alarm other than your hungry cat kneading into your head, you remember today is a holiday.", :pre_description => 'for now, I look like this', :post_description => 'after that thing, I look like this now.', :puzzle_solved => false})
-
-      @player.location_id = @location.id
-      @player.update({:location_id => @player.location_id, :objective_id => @player.objective_id})
-      @game_state = GameState.new({:player => @player})
-      binding.pry
-
-
-      @option1 = @location.options.create({:action => "Go back to sleep"})
-      @option2 = @location.options.create({:action => "Feed cat"})
-      @option3 = @location.options.create({:action => "Check phone"})
-      @default = true
-      @counter = 0
-
-      render :gamestart
-    else
-      render :index
-    end
+class PlayersController < ApplicationController
+  def index
+    @player = Player.new({:name => 'player name', :location_id => 1, :objective_id => 1})
+    @player.save
+    session[:current_player_id] = @player.id
   end
 
-  def bed_logic
-    binding.pry
-    input = params.fetch("player_start_input").upcase
+  # def create
+  #   # ...
+  #   session[:current_player_id] = @player.id
+  #   # ...
+  # end
 
+  def show
+
+    @player = Player.find(session[:current_player_id])
+    # @player = Player.find(params[:player_id])
+    input = params.fetch("player_start_input").upcase
 
     attributes = @game_state.bed_logic(input)
     @hungry = attributes.fetch(:hungry)
@@ -52,6 +28,16 @@ class GameController < ApplicationController
 
     render_to = attributes.fetch(:render, :gamestart)
     render render_to
+  end
+
+  def update
+    @player = Player.find(params[:id])
+  end
+
+  def start
+  end
+
+  def bed_logic
   end
 
   def start_area_1
@@ -116,4 +102,6 @@ class GameController < ApplicationController
     render :area2
     end
   end
+
+
 end

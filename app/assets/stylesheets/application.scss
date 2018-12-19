@@ -97,10 +97,23 @@ button {
   }
 }
 
+<<<<<<< HEAD
 .container {
   height: 500px;
   width: 735px;
   margin-right: 1015px;
+=======
+@keyframes flicker{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      opacity:random();
+    }
+  }
+}
+.container{
+  background-image: url();
+>>>>>>> 1be553e08dcb14bcbc255b06810a6ad9369ff4d6
 
   &::after {
     content:" ";
@@ -273,10 +286,27 @@ p {
   padding-right: 15px;
 }
 
+input {
+  caret-color: blue;
+}
+
+#switch:checked~#game_name{
+  font-size: 40px;
+  margin-top: 100px;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+}
+#switch~#game_name{
+  font-size: 40px;
+  margin-top: 100px;
+}
+
 img {
   width: 25%;
   border-radius: 50%;
 }
+
 
 footer {
   position: fixed;

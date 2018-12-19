@@ -1,0 +1,51 @@
+<br>
+<% @location %> <% @player %>
+<p>render succesful</p>
+<% if @default %>
+<p> <%= "You awake to the feeling of your cat jumping on your bed. It feels a little later than you usually wake up in the morning. With no alarm other than your hungry cat kneading into your head, you remember today is a holiday." %> <p>
+
+<p><%= "You roll over and check the time on your phone, it's 8:04AM" %></p>
+
+<div class="options">
+<h4><%= "What do you do now?" %></h4>
+
+</div>
+
+<% elsif  @slept%>
+
+<p><%= "You close your eyes and quickly drift back to sleep. You wake up to find it's currently" %> <%= @time %></p>
+<h4><%= "What do you do now?" %></h4>
+
+<% elsif  @tired%>
+<%= "Are you feeling okay?" %>
+<h4><%= "What do you do now?" %></h4>
+
+
+<% elsif  @hungry%>
+<p><%= "You roll out of bed and muddle your way into the kitchen, cat screaming while dodging between your steps" %></p>
+
+<p><%= "Checking the bag of food you find a chewed out hole with bits of food scattered across the table...your cat still appears hungry although you might have a feeling they are probably okay." %></p>
+<h4><%= "What do you do now?" %></h4>
+
+<% elsif  @feeds%>
+<p><%= "You roll out of bed and muddle your way into the kitchen, cat screaming while dodging between your steps" %></p>
+
+<p><%= "Grabbing the bag of food you remembered that you accidentally bought kitten food, your cat doesn't seem to mind either way so you've been going through it anyway." %></p>
+
+<p><%= "Pouring the food into your cats dish as they try to push your hand away to start eating as soon as possible." %></p>
+<h4><%= "What do you do now?" %></h4>
+
+<% elsif  @pets%>
+<p><%= "They like you" %></p>
+
+<h4><%= "What do you do now?" %></h4>
+
+<% elsif  @phone%>
+<p><%= "You feel a buzz and check your phone. An unknown number sent you a text that reads 'Find Santa.'" %></p>
+
+<p><%= "With abosultely no clue what's going on, you decide to follow along for the sake of plot." %></p>
+
+<h4><%= "What do you do now?" %></h4>
+
+<span><%="Find Santa" %></span>
+<% end %>

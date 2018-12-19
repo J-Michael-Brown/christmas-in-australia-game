@@ -22,17 +22,24 @@ class PlayersController < ApplicationController
 
     @location = @objective.locations.create({:sign => 'bed', :transition => "You awake to the feeling of your cat jumping on your bed. It feels a little later than you usually wake up in the morning. With no alarm other than your hungry cat kneading into your head, you remember today is a holiday.", :pre_description => 'The covers envelope you.', :post_description => "You've found your way out of bed.", :puzzle_solved => false})
 
+    @location.options.create({:action => 'sleep'})
+    @location.options.create({:action => 'feed cat'})
+    @location.options.create({:action => 'check phone'})
+
+    @player.update(:location_id => @location.id)
+
     redirect_to player_path(@player)
   end
 
   def show
     @player = Player.find(params[:id])
     @game_state = GameState.new({:player => @player})
+    @location = Location.find(@player.location_id)
     # @player = Player.find(params[:player_id])
     @input = params.fetch("input", '').upcase
 
     attributes = @game_state.bed_logic(@input)
-    @hungry = attributes.fetch(:hungry)
+    @hungry = attributes.fetch(:hungry, false)
     @phone = attributes.fetch(:phone, false)
     @slept = attributes.fetch(:slept)
     @tired = attributes.fetch(:tired)
@@ -45,11 +52,12 @@ class PlayersController < ApplicationController
   def update
     @player = Player.find(params[:id])
     @game_state = GameState.new({:player => @player})
+    @location = Location.find(@player.location_id)
 
     @input = params.fetch("input", '').upcase
 
     attributes = @game_state.bed_logic(@input)
-    @hungry = attributes.fetch(:hungry)
+    @hungry = attributes.fetch(:hungry, false)
     @phone = attributes.fetch(:phone, false)
     @slept = attributes.fetch(:slept)
     @tired = attributes.fetch(:tired)

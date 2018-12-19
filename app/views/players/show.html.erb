@@ -1,10 +1,21 @@
-<%= @player.name %>
+<h2><%= @player.name.upcase %>'s Adventure!</h2>
+<p><%= @location.sign %></p>
+<p><%= @location.transition %></p>
 
-<p><%= @input %></p>
+<% if (@player.location_id > 0) %>
+  <%= render 'bed' %>
+<% end %>
 
-  <%# render "layout/" + @locaiton.sign %>
+<dl>
+  <% @location.options.each do |option| %>
+    <dd><%= option.action %></dd>
+  <% end %>
+</dl>
+
+  <%# render "layout/" + @location.sign %>
 
 <footer>
+  <p><%= @input %></p>
   <%= form_for(@player) do %>
     <%= text_field_tag(:input, '', autofocus: true) %>
   <% end %>

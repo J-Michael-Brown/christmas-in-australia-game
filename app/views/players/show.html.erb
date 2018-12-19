@@ -1,0 +1,11 @@
+<%= @player.name %>
+
+<p><%= @input %></p>
+
+  <%# render "layout/" + @locaiton.sign %>
+
+<footer>
+  <%= form_for(@player) do %>
+    <%= text_field_tag(:input, '', autofocus: true) %>
+  <% end %>
+</footer>

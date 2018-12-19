@@ -2,11 +2,9 @@ require "pry"
 
 class GameController < ApplicationController
 
-  @@counter = 0
 
-  def index
-    render :index
-  end
+
+
 
   def start
     start = params.fetch("player_input").upcase
@@ -18,17 +16,20 @@ class GameController < ApplicationController
 
       @player.objective_id = @objective.id
 
-      @location = @objective.locations.create({:sign => 'doorway', :transition => 'Welcome!', :pre_description => 'for now, I look like this', :post_description => 'after that thing, I look like this now.', :puzzle_solved => false})
+      @location = @objective.locations.create({:sign => 'Bed', :transition => "You awake to the feeling of your cat jumping on your bed. It feels a little later than you usually wake up in the morning. With no alarm other than your hungry cat kneading into your head, you remember today is a holiday.", :pre_description => 'for now, I look like this', :post_description => 'after that thing, I look like this now.', :puzzle_solved => false})
 
       @player.location_id = @location.id
       @player.update({:location_id => @player.location_id, :objective_id => @player.objective_id})
+      @game_state = GameState.new({:player => @player})
+      binding.pry
 
 
       @option1 = @location.options.create({:action => "Go back to sleep"})
-
-      # binding.pry
+      @option2 = @location.options.create({:action => "Feed cat"})
+      @option3 = @location.options.create({:action => "Check phone"})
       @default = true
-      @@counter = 0
+      @counter = 0
+
       render :gamestart
     else
       render :index
@@ -36,6 +37,7 @@ class GameController < ApplicationController
   end
 
   def bed_logic
+    binding.pry
     input = params.fetch("player_start_input").upcase
 
     if input == (("SLEEP") || ("GO BACK TO SLEEP") || ("GO TO SLEEP"))

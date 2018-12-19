@@ -1,0 +1,18 @@
+<div class="player-list">
+  <dl>
+    <%# @players.each do |player| %>
+      <dd><%# link_to player.name, player_path(player) %></dd>
+    <%# end %>
+  </dl>
+</div>
+
+
+<p class="game-text">Welcome to the start of the game</p>
+<p>Type "start" to begin</p>
+
+<footer>
+  <form class="" action="/players" method="post">
+    <input type="hidden" name="_method" value="new">
+    <input class="user-input" type="text" name="player_input" autofocus>
+  </form>
+</footer>

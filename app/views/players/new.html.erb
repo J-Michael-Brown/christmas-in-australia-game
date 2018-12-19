@@ -1,0 +1,14 @@
+<p class="game-text">Welcome to the start of the game</p>
+<p>What is your name?</p>
+
+<!-- <footer>
+  <form method="players" action="create">
+    <input type="hidden" name="_method" value="create">
+  </form>
+</footer> -->
+
+<footer>
+  <%= form_for [@player] do |f| %>
+    <%= f.text_field :name, autofocus: true%>
+  <% end %>
+</footer>

@@ -35,5 +35,7 @@ Rails.application.routes.draw do
   get '/scene2_game' => 'game#scene2_game'
   get '/scene3' => 'game#start_scene_3'
   get '/scene3_game' => 'game#scene3_game'
+  get '/scene4' => 'game#start_scene_4'
+  get '/scene4_game' => 'game#scene4_game'
 
 end

@@ -97,23 +97,12 @@ button {
   }
 }
 
-<<<<<<< HEAD
+
 .container {
   height: 500px;
   width: 735px;
   margin-right: 1015px;
-=======
-@keyframes flicker{
-  $steps:20;
-  @for $i from 0 through $steps{
-    #{percentage($i*(1/$steps))}{
-      opacity:random();
-    }
-  }
-}
-.container{
-  background-image: url();
->>>>>>> 1be553e08dcb14bcbc255b06810a6ad9369ff4d6
+
 
   &::after {
     content:" ";

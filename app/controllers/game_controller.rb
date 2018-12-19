@@ -161,7 +161,7 @@ class GameController < ApplicationController
     elsif input == ("COMET")
       # Update database with objective 1 here
       @header = "You successfully solved the elves first riddle"
-      @story = "He looks at you flustered and flabbergasted. He asked another riddle:"
+      @story = "He looks at you flustered and flabbergasted. He asks another riddle:"
       @choice = "What do snowmen eat for breakfast?"
       @option1 = "Shake n' Bake"
       @option2 = "Snowflakes"
@@ -222,6 +222,6 @@ class GameController < ApplicationController
       @option1 = "go left"
       @option2 = "Stay"
       render :scene4
-  end
+    end
   end
 end

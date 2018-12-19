@@ -61,7 +61,7 @@ class GameController < ApplicationController
       end
       @tired = true
       render :gamestart
-    elsif input == (("FEED") || ("FEED CAT") || ("GET UP AND FEED CAT"))
+    elsif input == (("FEED CAT") || ("GET UP AND FEED CAT"))
       @default = false
       @slept = false
       if @@counter >= 1
@@ -70,14 +70,14 @@ class GameController < ApplicationController
         @feeds = true
       end
       render :gamestart
-    elsif input == (("PET") || ("PET CAT") || ("PET MY CAT"))
+    elsif input == (("PET CAT") || ("PET"))
       @default = false
       @slept = false
       @hungry = false
       @feeds = false
       @pets = true
       render :gamestart
-    elsif input == (("PHONE") || ("CHECK PHONE") || ("CHECK THE PHONE"))
+    elsif input == (("CHECK PHONE") || ("PHONE"))
       @default = false
       @slept = false
       @hungry = false
@@ -87,13 +87,23 @@ class GameController < ApplicationController
       @objective = @objective
       @player = @player
       @location = @location
-      @header = "Before you step out of your cozy home, you notice your late grandmother's favorite compass, You inspect the compass. It shows 3 north's and an east. You can't help but wonder if this is the reason grandma was constantly taking left turns. What do you do?"
+      # @header = "Before you step out of your cozy home, you notice your late grandmother's favorite compass, You inspect the compass. It shows 3 north's and an east. You can't help but wonder if this is the reason grandma was constantly taking left turns. What do you do?"
+      # @choice = "Do you take the compass?"
+      # @option1 = "Take it"
+      # @option2 = "Leave it"
+      render :gamestart
+    elsif input == (("FIND SANTA") || ("SANTA"))
+      @header = "Before you step out of your cozy home, you notice your late grandmother's favorite compass, You inspect the compass. It shows 3 north's and an east. You can't help but wonder if this is the reason grandma was constantly lost. What do you do?"
       @choice = "Do you take the compass?"
       @option1 = "Take it"
       @option2 = "Leave it"
       render :scene1
     else
       @default = true
+      @slept = false
+      @hungry = false
+      @feeds = false
+      @pets = false
       render :gamestart
     end
   end
@@ -116,7 +126,6 @@ class GameController < ApplicationController
     @dialogue = "Hey *&$@!, glad to see you've finally left the house. We need your help. a band of misfits have taken over the old quarry."
     @header = "You took Grandma's compass!"
     @story = "You say bye to your cat as you head out on your journey. You close your door behind you as you step into the brisk warm air of the australlian outback. The post apocolyptic wasteland you call home is preparing for the upcoming holiday season. You look around and see your nieghbor Miles the Capybara setting up Christmas decorations in his capybarian home."
-    @image = "/capybara.png"
     @dialogue = "Hey @Player, glad to see you've finally left the house. We need your help. a band of misfits have taken over the old quarry."
     @choice = "Do you help?"
     @option1 = "(walk) | Pretend you don't notice him and continue walking, you assume he's asking for spare change"
@@ -132,7 +141,7 @@ class GameController < ApplicationController
     render :scene2
   elsif
     input == (("WALK")|| ("INGORE"))
-    @header = "After ignoring the old rodents concerns. You make your way through the desert path and approach the old Quarry. What you see shocks you It's a pack of christmas elves in the middle of the australian outback. One noticeable large elf notices you and approaches."
+    @header = "After ignoring the old rodents concerns. You make your way through the desert path and approach the old Quarry. Shocked beyond measurably belief, you find it's a pack of christmas elves in the middle of the australian outback. One noticeable large elf notices you and approaches."
     @choice = "Do you speak to it or run away??"
     @option1 = "speak"
     @option2 = "ignore"
@@ -193,7 +202,7 @@ class GameController < ApplicationController
       @option1 = "Left"
       @option2 = "Right"
       @option3 = "(Use) | grandma's compass"
-      render :scene3
+      render :scene2
     else
       @header = "You conclude that this situation is too difficult for you. You stick to your guts and pretend not to have noticed the overly jolly man elf and speed off down the path. You wonder if you should have just stayed in bed today."
       @choice = "You continue on with your plain adventure. you find a fork in the road:"
@@ -232,19 +241,20 @@ class GameController < ApplicationController
       @option2 = "Stay"
       render :scene3
     else input == ("STAY")
-      @header = "You continue down your chosen path"
-      @story= "As you approach steady pace, "
-      @dialogue =
-      @choice = "What do you do?"
-      @option1 = "Speak"
-      @option2 = "Walk"
+      @header = "You continue down your chosen path looking for Santa as familiar face greets you, it's Rudolph. he says to you with a heavy slur"
+      @story= "@player!! You feel that rain????"
+      @dialogue = "You say: 'it doesn't rain in the outback.. its a desert, how do you know it's going to rain?"
+      @choice = "he hiccups"
+      @option1 = "Because..."
+      @option2 = "Rudolph the red knows rain, dear."
+      @option3 = "-next-"
       render :scene4
     end
   end
 
   def scene4_game
     input = params.fetch("player_scene4_input").upcase
-    if input == ("SPEAK")
+    if input == ("NEXT")
       @header= "YOU HAVE COMPLETED CHAPTER 1"
       @story= "To unlock more of this epic, purchase more lootboxes."
       @image = ("/CHEAP.gif")

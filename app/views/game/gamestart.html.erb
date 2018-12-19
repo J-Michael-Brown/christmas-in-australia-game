@@ -1,15 +1,15 @@
 <br>
 <% @location %> <% @player %> <% @objective %>
 <% if @default %>
-<p> <%= "You awake to the feeling of your cat jumping on your bed. It feels a little later than you usually wake up in the morning. With no alarm other than your hungry cat kneading into your head, you remember today is a holiday." %> <p>
+<p> <%= "You awake to the feeling of your cat jumping on your bed. It feels a little later than you usually wake up. You wish baby jesus happy birthday and stay under the covers. With no alarm other than your hungry cat kneading into your head, you remember she needs to be fed." %> <p>
 
 <p><%= "You roll over and check the time on your phone, it's 8:04AM" %></p>
 
 <div class="options">
 <h4><%= "What do you do now?" %></h4>
 
-<span><%="Go back to sleep" %></span><br>
-<span><%="Get up and feed cat" %></span><br>
+<span><%="Sleep" %></span><br>
+<span><%="Feed cat" %></span><br>
 <span><%="Check phone" %></span>
 
 </div>
@@ -19,19 +19,19 @@
 <p><%= "You close your eyes and quickly drift back to sleep. You wake up to find it's currently" %> <%= @time %></p>
 <h4><%= "What do you do now?" %></h4>
 
-<span><%= @option1%></span><br>
-<span><%="Get up and feed cat" %></span><br>
+<span><%= "Sleep"%></span><br>
+<span><%="Feed cat" %></span><br>
 <span><%="Check phone" %></span>
 
 <% elsif  @tired%>
-<%= "Are you feeling okay?" %>
+<%= "Are you feeling okay? You don't have to start this thrilling adventure if you don't want to" %>
 <h4><%= "What do you do now?" %></h4>
 
-<span><%="Get up and feed cat" %></span><br>
+<span><%="Feed cat" %></span><br>
 <span><%="Check phone" %></span>
 
 <% elsif  @hungry%>
-<p><%= "You roll out of bed and muddle your way into the kitchen, cat screaming while dodging between your steps" %></p>
+<p><%= "You roll out of bed and muddle your way into the kitchen, Mr. Fluffles is screaming while darting between your legs" %></p>
 
 <p><%= "Checking the bag of food you find a chewed out hole with bits of food scattered across the table...your cat still appears hungry although you might have a feeling they are probably okay." %></p>
 <h4><%= "What do you do now?" %></h4>
@@ -51,7 +51,7 @@
 <span><%="Check phone" %></span>
 
 <% elsif  @pets%>
-<p><%= "They like you" %></p>
+<p><%= "They seemingly like you, you pet for a little too long and Mr. fluffles bites you. You turn away. He judges you." %></p>
 
 <h4><%= "What do you do now?" %></h4>
 
@@ -62,9 +62,13 @@
 
 <p><%= "With abosultely no clue what's going on, you decide to follow along for the sake of plot." %></p>
 
+<br>
+
 <h4><%= "What do you do now?" %></h4>
 
-<span><%="Find Santa" %></span>
+<span><%="Find Santa" %></span><br>
+
+<span><%="Sleep" %></span>
 <% end %>
 <form class="" action="/bed" method="get">
 <footer> <input class="user-input" type="text" name="player_start_input" autofocus > </footer>
